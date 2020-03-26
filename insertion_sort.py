@@ -5,7 +5,7 @@ def insertion_sort(a):
         j = i - 1
         while j >= 0 and  a[j] > element:
             a[j + 1] = a[j]
-            j = j -1
+            j = j - 1
         a[j + 1] = element
         i = i + 1
     return a
