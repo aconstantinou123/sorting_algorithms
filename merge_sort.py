@@ -15,7 +15,7 @@ def merge(a, p, q, r):
     R.append(inf)
     i = j = 0 
     k = p
-    while k < r + 1:
+    while k <= r:
         if L[i] < R[j]:
             a[k] = L[i]
             i = i + 1
