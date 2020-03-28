@@ -1,25 +1,25 @@
 from math import floor, inf
 
-def merge_sort(a, p, r):
-    if p < r:
-        q = floor((p + r) / 2)
-        merge_sort(a, p, q)
-        merge_sort(a, q + 1, r)
-        merge(a, p, q, r)
+def merge_sort(a,l, h):
+    if l < h:
+        m = floor((l + h) / 2)
+        merge_sort(a, l, m)
+        merge_sort(a, m + 1, h)
+        merge(a, l, m, h)
     return a
         
-def merge(a, p, q, r):
-    L = a[p:q + 1]
-    L.append(inf)
-    R = a[q + 1:r + 1]
-    R.append(inf)
+def merge(a, l, m, h):
+    left = a[l:m + 1]
+    left.append(inf)
+    right = a[m + 1:h + 1]
+    right.append(inf)
     i = j = 0 
-    k = p
-    while k <= r:
-        if L[i] < R[j]:
-            a[k] = L[i]
+    k = l
+    while k <= h:
+        if left[i] < right[j]:
+            a[k] = left[i]
             i = i + 1
         else:
-            a[k] = R[j]
+            a[k] = right[j]
             j = j + 1
         k = k + 1
